@@ -9,6 +9,7 @@
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, Button} from 'react-native';
 import { createStackNavigator, createNavigationContainer, createBottomTabNavigator } from 'react-navigation';
+import AntDesignIcon from 'react-native-vector-icons/AntDesign';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -26,6 +27,8 @@ class Home extends Component<Props> {
         <Text style={styles.welcome}>Welcome to React Native!</Text>
         <Text style={styles.instructions}>To get started, edit App.js</Text>
         <Text style={styles.instructions}>{instructions}</Text>
+        <AntDesignIcon size={32} name="customerservice"/>
+
         <Button title="Go" onPress={() => this.props.navigation.navigate('Card')}/>
       </View>
     );
