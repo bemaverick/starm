@@ -8,8 +8,10 @@
 
 import React, {Component} from 'react';
 import {Platform, StyleSheet, Text, View, Button} from 'react-native';
-import { createStackNavigator, createNavigationContainer, createBottomTabNavigator } from 'react-navigation';
-import AntDesignIcon from 'react-native-vector-icons/AntDesign';
+import { createStackNavigator, createNavigationContainer,  } from 'react-navigation';
+import { createMaterialBottomTabNavigator } from 'react-navigation-material-bottom-tabs';
+import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { AlleyMain } from './src/containers';
 
 const instructions = Platform.select({
   ios: 'Press Cmd+R to reload,\n' + 'Cmd+D or shake for dev menu',
@@ -27,7 +29,6 @@ class Home extends Component<Props> {
         <Text style={styles.welcome}>Welcome to React Native!</Text>
         <Text style={styles.instructions}>To get started, edit App.js</Text>
         <Text style={styles.instructions}>{instructions}</Text>
-        <AntDesignIcon size={32} name="customerservice"/>
 
         <Button title="Go" onPress={() => this.props.navigation.navigate('Card')}/>
       </View>
@@ -35,16 +36,56 @@ class Home extends Component<Props> {
   }
 }
 
-const HomeStack = createStackNavigator({
-  Home,
+const AlleyStack = createStackNavigator({
+  AlleyMain: {
+    defaultNavigationOptions: {
+    },
+    screen: AlleyMain
+  },
   Card: {
-    screen: Home
+    screen: AlleyMain
+  }
+}, {
+  defaultNavigationOptions: {
+    header: null
+
   }
 });
 
-const TabNavigator = createBottomTabNavigator({
-  Home: HomeStack,
-  Settings: Home,
+const TabNavigator = createMaterialBottomTabNavigator({
+  Alley: {
+    screen: AlleyStack,
+    navigationOptions: {
+      tabBarIcon: () => (
+        <MaterialCommunityIcon size={24} name="account-star" color="white"/>
+      ),
+      tabBarColor: '#032'
+    },
+
+  },
+
+  Competitor: {
+    screen: Home,
+    navigationOptions: {
+      tabBarIcon: ({ focused, horizontal, tintColor }) => {
+        return (
+          <MaterialCommunityIcon size={24} name="human-handsup" color={focused ? 'white' : tintColor}/>
+
+        )
+
+      },
+      tabBarColor: "blue"
+
+    }
+  },
+  Profile: { screen: Home },
+  Setting: { screen: AlleyMain },
+  Event: { screen: AlleyMain }
+}, {
+  initialRouteName: 'Alley',
+  activeColor: '#fff',
+  inactiveColor: '#999',
+  barStyle: { backgroundColor: '#032' },
 });
 
 const Navigator = createNavigationContainer(TabNavigator);
