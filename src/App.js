@@ -11,7 +11,8 @@ import {View} from 'react-native';
 
 import Navigator from './navigation';
 import styles from './styles';
-
+import { firebaseConfig } from './config';
+import firebase from 'react-native-firebase';
 
 
 type Props = {};
@@ -19,6 +20,10 @@ type Props = {};
 
 
 export default class App extends Component<Props> {
+  componentDidMount() {
+    firebase.initializeApp(firebaseConfig);
+    console.log(firebase.database().getServerTime())
+  }
   render() {
     return (
       <View style={styles.container}>

@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "982619270313",
+    "firebase_url": "https://armfirebase.firebaseio.com",
+    "project_id": "armfirebase",
+    "storage_bucket": "armfirebase.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:982619270313:android:b86cefcb627fd224",
+        "android_client_info": {
+          "package_name": "com.starm"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "982619270313-ereg2blvtvadato0ocjmducucesi9ekk.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyANFdTbLzqvaOgGodnWqOoF3R-ej0nAEIA"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
