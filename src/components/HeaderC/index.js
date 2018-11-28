@@ -5,7 +5,8 @@
 
 import React, {Component} from 'react';
 import Node from 'react';
-import {Dimensions, Text, Image, TouchableOpacity, View, Button } from 'react-native';
+import {Dimensions, Text, Image, TouchableOpacity, View, StatusBar, Platform } from 'react-native';
+import { Colors } from '../../constants';
 import styles from './styles';
 
 const { width } = Dimensions.get('window');
@@ -27,6 +28,11 @@ const HeaderC = (props: _t_props) => {
 
   return (
     <View style={styles.container}>
+      <StatusBar
+        hidden={Platform.OS === 'android'}
+        backgroundColor={Colors.darkGreen}
+        barStyle="light-content"
+      />
       <LeftWrap
         style={styles.leftBlock}
         onPress={props.leftIconAction}
