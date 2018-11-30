@@ -17,6 +17,8 @@ import firebase from 'react-native-firebase';
 
 type Props = {};
 
+console.disableYellowBox = true;
+
 
 
 export default class App extends Component<Props> {

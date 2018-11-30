@@ -9,6 +9,9 @@ const Colors = {
   darkestGreen: "#010",
   darkGreen: "#021",
 
+  darkBlue: "#012",
+  darkestBlue: '#001'
+
 }
 
 export default Colors

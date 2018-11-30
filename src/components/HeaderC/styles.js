@@ -1,4 +1,5 @@
 import { StyleSheet, Platform } from "react-native";
+import { Colors } from './../../constants';
 
 export default StyleSheet.create({
   container: {
@@ -6,9 +7,9 @@ export default StyleSheet.create({
     paddingTop: 20,
     paddingHorizontal: 5,
     flexDirection: 'row',
-    backgroundColor: '#021',
+    backgroundColor: Colors.darkGreen,
     borderBottomWidth: 2,
-    borderColor: '#043'
+    borderColor: '#033'
   },
   leftBlock: {
     height: 45,
@@ -33,7 +34,7 @@ export default StyleSheet.create({
     alignItems: 'center'
   },
   mainText: {
-    color: "#fff",
+    color: Colors.white,
     letterSpacing: 1,
     fontSize: 16
   },

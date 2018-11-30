@@ -3,16 +3,16 @@
  * @flow
  */
 
-import React, {Component} from 'react';
+import React from 'react';
 import Node from 'react';
-import {Dimensions, Text, Image, TouchableOpacity, View, StatusBar, Platform } from 'react-native';
+import { Text, Image, TouchableOpacity, View, StatusBar, Platform } from 'react-native';
 import { Colors } from '../../constants';
 import styles from './styles';
 
-const { width } = Dimensions.get('window');
 
 type _t_props = {
   title: string,
+  backgroundColor: string,
   leftItemImageURI?: string,
   rightIcon?: Node,
   rightIconAction?: Function,
@@ -27,10 +27,12 @@ const HeaderC = (props: _t_props) => {
   const RightWrap = props.rightIconAction ? TouchableOpacity : View;
 
   return (
-    <View style={styles.container}>
+    <View
+      style={[styles.container, props.backgroundColor && { backgroundColor: props.backgroundColor }]}
+    >
       <StatusBar
         hidden={Platform.OS === 'android'}
-        backgroundColor={Colors.darkGreen}
+        backgroundColor={props.backgroundColor ? props.backgroundColor : Colors.darkGreen}
         barStyle="light-content"
       />
       <LeftWrap

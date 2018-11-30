@@ -3,7 +3,12 @@ import React from 'react';
 import { createNavigationContainer, createStackNavigator } from "react-navigation";
 import { createMaterialBottomTabNavigator } from "react-navigation-material-bottom-tabs";
 
-import { AlleyMain } from "./../containers";
+import {
+  AlleyMain, AlleyAddChampion,
+  MemberMain
+} from "./../containers";
+import { CustomIcon } from "./../components";
+
 import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Colors } from "./../constants";
 
@@ -13,13 +18,13 @@ const AlleyStack = createStackNavigator({
     },
     screen: AlleyMain
   },
-  Card: {
-    screen: AlleyMain
+  AlleyAddChampion: {
+    screen: AlleyAddChampion
   }
 }, {
   defaultNavigationOptions: {
-    header: null
-
+    header: null,
+    gesturesEnabled: true
   }
 });
 
@@ -36,7 +41,7 @@ const TabNavigator = createMaterialBottomTabNavigator({
   },
 
   Competitor: {
-    screen: AlleyMain,
+    screen: MemberMain,
     navigationOptions: {
       tabBarIcon: ({ focused, horizontal, tintColor }) => {
         return (
@@ -45,7 +50,7 @@ const TabNavigator = createMaterialBottomTabNavigator({
         )
 
       },
-      tabBarColor: "blue"
+      tabBarColor: Colors.darkBlue
 
     }
   },
