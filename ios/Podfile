@@ -9,6 +9,7 @@ target 'stARM' do
 
   pod 'Firebase/Core', '~> 5.11.0'
   pod 'Firebase/Database', '~> 5.11.0'
+  pod 'Firebase/Auth', '~> 5.11.0'
   target 'stARMTests' do
     inherit! :search_paths
     # Pods for testing

@@ -1,16 +1,29 @@
 import React from 'react';
 
-import { createNavigationContainer, createStackNavigator } from "react-navigation";
+import { createNavigationContainer, createStackNavigator, createSwitchNavigator } from "react-navigation";
 import { createMaterialBottomTabNavigator } from "react-navigation-material-bottom-tabs";
 
 import {
   AlleyMain, AlleyAddChampion,
-  MemberMain
+  MemberMain,
+  Login, Loading, SignUp,
+  ProfileMain
 } from "./../containers";
 import { CustomIcon } from "./../components";
 
 import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
 import { Colors } from "./../constants";
+
+const ProfileStack = createStackNavigator({
+  ProfileMain: {
+    screen: ProfileMain
+  },
+}, {
+  defaultNavigationOptions: {
+    header: null,
+    gesturesEnabled: true
+  }
+});
 
 const AlleyStack = createStackNavigator({
   AlleyMain: {
@@ -54,9 +67,9 @@ const TabNavigator = createMaterialBottomTabNavigator({
 
     }
   },
-  Profile: { screen: AlleyMain },
   Setting: { screen: AlleyMain },
-  Event: { screen: AlleyMain }
+  Event: { screen: AlleyMain },
+  Profile: { screen: ProfileStack },
 }, {
   initialRouteName: 'Alley',
   activeColor: '#fff',
@@ -64,6 +77,19 @@ const TabNavigator = createMaterialBottomTabNavigator({
   barStyle: { backgroundColor: Colors.darkGreen },
 });
 
-const Navigator = createNavigationContainer(TabNavigator);
+
+const appRootNav = createSwitchNavigator({
+    Loading,
+    SignUp,
+    Login,
+    TabNavigator
+  },
+  {
+    initialRouteName: 'Loading'
+  }
+);
+
+
+const Navigator = createNavigationContainer(appRootNav);
 
 export default Navigator;
