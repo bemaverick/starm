@@ -49,6 +49,7 @@
 		626D65799DFB495A86A03F57 /* MaterialIcons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9BE780376DD14CD79ABAA838 /* MaterialIcons.ttf */; };
 		832341BD1AAA6AB300B99B32 /* libRCTText.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 832341B51AAA6A8300B99B32 /* libRCTText.a */; };
 		8430C5FE21AE99BB00A9207B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8430C5FD21AE99BB00A9207B /* GoogleService-Info.plist */; };
+		84833FC221B205EF000B713C /* libSplashScreen.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 84833FC121B205E1000B713C /* libSplashScreen.a */; };
 		895E9227FED34D1FB8E3C2BE /* libRNFirebase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 465FD0406EE249299EC72C0D /* libRNFirebase.a */; };
 		8F0D9CA1321E401997524465 /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 2C32A10F226A4C81A5FAC13D /* FontAwesome5_Solid.ttf */; };
 		976570C220A642309FF03FB9 /* Octicons.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C010DEEED0444A0A23539FD /* Octicons.ttf */; };
@@ -357,6 +358,13 @@
 			remoteGlobalIDString = 134814201AA4EA6300B7C361;
 			remoteInfo = RNFirebase;
 		};
+		84833FC021B205E1000B713C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 84833F9321B205E1000B713C /* SplashScreen.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 3D7682761D8E76B80014119E;
+			remoteInfo = SplashScreen;
+		};
 		ADBDB9261DFEBF0700ED6528 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = ADBDB91F1DFEBF0600ED6528 /* RCTBlob.xcodeproj */;
@@ -407,6 +415,7 @@
 		7C452CA4F5BAF77BB34E605A /* Pods-stARM.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stARM.debug.xcconfig"; path = "Pods/Target Support Files/Pods-stARM/Pods-stARM.debug.xcconfig"; sourceTree = "<group>"; };
 		832341B01AAA6A8300B99B32 /* RCTText.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RCTText.xcodeproj; path = "../node_modules/react-native/Libraries/Text/RCTText.xcodeproj"; sourceTree = "<group>"; };
 		8430C5FD21AE99BB00A9207B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		84833F9321B205E1000B713C /* SplashScreen.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = SplashScreen.xcodeproj; path = "../node_modules/react-native-splash-screen/ios/SplashScreen.xcodeproj"; sourceTree = "<group>"; };
 		9776EB838F7B5530F8B40CDC /* Pods-stARM.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-stARM.release.xcconfig"; path = "Pods/Target Support Files/Pods-stARM/Pods-stARM.release.xcconfig"; sourceTree = "<group>"; };
 		987709050D5D80FDF6D07C8A /* libPods-stARMTests.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-stARMTests.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		98953A352F54467E92C4D2E8 /* AntDesign.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = AntDesign.ttf; path = "../node_modules/react-native-vector-icons/Fonts/AntDesign.ttf"; sourceTree = "<group>"; };
@@ -438,6 +447,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				84833FC221B205EF000B713C /* libSplashScreen.a in Frameworks */,
 				ADBDB9381DFEBF1600ED6528 /* libRCTBlob.a in Frameworks */,
 				11D1A2F320CAFA9E000508D9 /* libRCTAnimation.a in Frameworks */,
 				146834051AC3E58100842450 /* libReact.a in Frameworks */,
@@ -665,6 +675,7 @@
 		832341AE1AAA6A7D00B99B32 /* Libraries */ = {
 			isa = PBXGroup;
 			children = (
+				84833F9321B205E1000B713C /* SplashScreen.xcodeproj */,
 				5E91572D1DD0AC6500FF2AA8 /* RCTAnimation.xcodeproj */,
 				146833FF1AC3E56700842450 /* React.xcodeproj */,
 				00C302A71ABCB8CE00DB3ED1 /* RCTActionSheet.xcodeproj */,
@@ -753,6 +764,14 @@
 			isa = PBXGroup;
 			children = (
 				8430C64721AE9AB200A9207B /* libRNFirebase.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		84833F9421B205E1000B713C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				84833FC121B205E1000B713C /* libSplashScreen.a */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -938,6 +957,10 @@
 				{
 					ProductGroup = 8430C5F221AE996800A9207B /* Products */;
 					ProjectRef = B88120946D5E487289A57CC8 /* RNVectorIcons.xcodeproj */;
+				},
+				{
+					ProductGroup = 84833F9421B205E1000B713C /* Products */;
+					ProjectRef = 84833F9321B205E1000B713C /* SplashScreen.xcodeproj */;
 				},
 			);
 			projectRoot = "";
@@ -1231,6 +1254,13 @@
 			remoteRef = 8430C64621AE9AB200A9207B /* PBXContainerItemProxy */;
 			sourceTree = BUILT_PRODUCTS_DIR;
 		};
+		84833FC121B205E1000B713C /* libSplashScreen.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libSplashScreen.a;
+			remoteRef = 84833FC021B205E1000B713C /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
 		ADBDB9271DFEBF0700ED6528 /* libRCTBlob.a */ = {
 			isa = PBXReferenceProxy;
 			fileType = archive.ar;
@@ -1492,6 +1522,7 @@
 			baseConfigurationReference = 7C452CA4F5BAF77BB34E605A /* Pods-stARM.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = NO;
 				HEADER_SEARCH_PATHS = (
@@ -1499,6 +1530,7 @@
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase/**",
+					"$(SRCROOT)/../node_modules/react-native-splash-screen/ios",
 				);
 				INFOPLIST_FILE = stARM/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -1518,12 +1550,14 @@
 			baseConfigurationReference = 9776EB838F7B5530F8B40CDC /* Pods-stARM.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CURRENT_PROJECT_VERSION = 1;
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(SRCROOT)/../node_modules/react-native-gesture-handler/ios/**",
 					"$(SRCROOT)/../node_modules/react-native-vector-icons/RNVectorIconsManager",
 					"$(SRCROOT)/../node_modules/react-native-firebase/ios/RNFirebase/**",
+					"$(SRCROOT)/../node_modules/react-native-splash-screen/ios",
 				);
 				INFOPLIST_FILE = stARM/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
