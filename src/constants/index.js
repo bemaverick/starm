@@ -1,7 +1,7 @@
 import Colors from './colors';
-import Meticks from './metricks';
+import METRICKS from './metricks';
 
 export {
   Colors,
-  Meticks
+  METRICKS
 }

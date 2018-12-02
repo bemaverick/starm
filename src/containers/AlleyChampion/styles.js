@@ -4,7 +4,7 @@ import { Colors } from './../../constants';
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.darkestGreen,
+    backgroundColor: "#f9fff9",
   },
 
 });

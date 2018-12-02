@@ -1,5 +1,5 @@
 import { StyleSheet, Platform } from "react-native";
-import { Colors } from './../../constants';
+import { Colors, METRICKS } from './../../constants';
 
 export default StyleSheet.create({
   container: {
@@ -10,6 +10,15 @@ export default StyleSheet.create({
     backgroundColor: Colors.darkGreen,
     borderBottomWidth: 2,
     borderColor: '#033'
+  },
+  transparent: {
+    position: 'absolute',
+    backgroundColor: 'transparent',
+    width: METRICKS.SCREEN_WIDTH,
+    top: 0,
+    left: 0,
+    zIndex: 100,
+    borderBottomWidth: 0
   },
   leftBlock: {
     height: 45,

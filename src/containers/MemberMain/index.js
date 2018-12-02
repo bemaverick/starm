@@ -4,7 +4,7 @@
  */
 
 import React, { Component } from 'react';
-import { FlatList , Image, ImageBackground, Text, View, Dimensions, Button } from 'react-native';
+import { FlatList , Image, ImageBackground, Text, View, TouchableOpacity, Button } from 'react-native';
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
 import { HeaderC, ChampionItem } from './../../components';
 import { Colors } from './../../constants';
@@ -59,8 +59,12 @@ export default class MemberMain extends Component<Props> {
 
   renderItems = ({item, index}) => {
     const { data } = this.state;
+    const { navigation } = this.props;
+
     return (
-      <View style={{
+      <TouchableOpacity
+        onPress={() => navigation.navigate('Member', { memberData: this.state.flags[index] })}
+        style={{
        // backgroundColor: '#024',
         marginHorizontal: 0,
         marginLeft: 8,
@@ -153,7 +157,7 @@ export default class MemberMain extends Component<Props> {
 
 
 
-      </View>
+      </TouchableOpacity>
     )
   }
 

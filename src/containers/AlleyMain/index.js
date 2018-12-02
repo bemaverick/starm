@@ -43,8 +43,11 @@ export default class AlleyMain extends Component<Props> {
 
   renderItems = ({item, index}) => {
     const { data } = this.state;
+    const { navigation } = this.props;
+    const championData = data[item];
     return (
       <ChampionItem
+        onPress={() => this.props.navigation.navigate("AlleyChampion", {championData})}
         imageURI={data[item].avatar_url}
         title={data[item].last_name}
       />

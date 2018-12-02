@@ -4,8 +4,8 @@ import { createNavigationContainer, createStackNavigator, createSwitchNavigator 
 import { createMaterialBottomTabNavigator } from "react-navigation-material-bottom-tabs";
 
 import {
-  AlleyMain, AlleyAddChampion,
-  MemberMain,
+  AlleyMain, AlleyAddChampion, AlleyChampion,
+  MemberMain, Member,
   Login, Loading, SignUp,
   ProfileMain
 } from "./../containers";
@@ -25,12 +25,26 @@ const ProfileStack = createStackNavigator({
   }
 });
 
+
+const MemberStack = createStackNavigator({
+  MemberMain: {
+    screen: MemberMain
+  },
+  Member
+}, {
+  defaultNavigationOptions: {
+    header: null,
+    gesturesEnabled: true
+  }
+});
+
 const AlleyStack = createStackNavigator({
   AlleyMain: {
     defaultNavigationOptions: {
     },
     screen: AlleyMain
   },
+  AlleyChampion,
   AlleyAddChampion: {
     screen: AlleyAddChampion
   }
@@ -53,8 +67,8 @@ const TabNavigator = createMaterialBottomTabNavigator({
 
   },
 
-  Competitor: {
-    screen: MemberMain,
+  Member: {
+    screen: MemberStack,
     navigationOptions: {
       tabBarIcon: ({ focused, horizontal, tintColor }) => {
         return (

@@ -1,6 +1,7 @@
 import HeaderC from './HeaderC';
 import ChampionItem from './ChampionItem';
 import CustomIcon from './CustomIcon';
+import ResponsiveImage from './ResponsiveImage';
 
 
 
@@ -8,5 +9,6 @@ import CustomIcon from './CustomIcon';
 export {
   HeaderC,
   ChampionItem,
-  CustomIcon
+  CustomIcon,
+  ResponsiveImage
 }
