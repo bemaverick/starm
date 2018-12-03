@@ -22,6 +22,7 @@ export default class ProfileMain extends Component<Props> {
 
   componentDidMount() {
     const { currentUser } = firebase.auth();
+    console.log(currentUser)
     if (currentUser && currentUser._user) {
       this.setState({currentUser: { email: currentUser._user.email}})
     }
@@ -30,7 +31,7 @@ export default class ProfileMain extends Component<Props> {
  logout = () => {
    firebase.auth().signOut()
      .then(() => console.log("success"))
-     .catch(() => console.log("error"))
+     .catch((error) => console.log("error", error))
 
  }
 

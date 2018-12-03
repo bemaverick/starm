@@ -38,6 +38,7 @@ yarn-error.log
 src/config
 ios/Pods
 ios/Podfile.lock
+package-lock.json
 
 # BUCK
 buck-out/

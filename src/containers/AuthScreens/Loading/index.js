@@ -4,13 +4,17 @@ import firebase from 'react-native-firebase';
 export default class Loading extends React.Component {
 
   componentDidMount() {
-    firebase.auth().onAuthStateChanged(user => {
+    this.unsubscribe = firebase.auth().onAuthStateChanged(user => {
       console.log(user);
       this.props.navigation.navigate(user ? 'TabNavigator' : 'Login')
     })
-
-
   }
+
+  componentWillUnmount() {
+    if (this.unsubscribe) this.unsubscribe();
+  }
+
+
   render() {
     return (
       <View style={styles.container}>
