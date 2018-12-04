@@ -10,7 +10,10 @@ const Colors = {
   darkGreen: "#021",
 
   darkBlue: "#012",
-  darkestBlue: '#001'
+  darkestBlue: '#001',
+
+  darkRed: "#200",
+  darkestRed: '#100'
 
 }
 

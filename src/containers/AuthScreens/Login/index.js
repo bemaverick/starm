@@ -1,5 +1,5 @@
 import React from 'react'
-import { ScrollView, Animated, Image, View, TouchableOpacity, Easing, Platform } from 'react-native';
+import { ScrollView, Animated, Image, View, TouchableOpacity, Easing, Platform, Text } from 'react-native';
 import firebase from 'react-native-firebase';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
@@ -147,6 +147,7 @@ export default class Login extends React.Component {
 
 
   render() {
+    const { navigation } = this.props;
     const {
       email, phone, password, loginType, code
     } = this.state;
@@ -159,6 +160,8 @@ export default class Login extends React.Component {
 
     return (
       <View style={styles.container}>
+
+
 
         <Image
           style={styles.backgroundRootImage}
@@ -176,7 +179,11 @@ export default class Login extends React.Component {
 
 
 
-        <View style={styles.flex1} />
+        <View style={styles.flex1}>
+          <Text style={styles.logoText}>
+            StARM
+          </Text>
+        </View>
 
           <View>
             <ScrollView
@@ -195,7 +202,10 @@ export default class Login extends React.Component {
                   onPress={() => this.goToLogin("Phone")}
                 />
                 <ButtonC title="Sign in fb" mb={20} />
-                <ButtonC title="Sign up" mb={10} />
+                <ButtonC
+                  title="Sign up" mb={10}
+                  onPress={() => navigation.navigate("SignUp")}
+                />
               </View>
 
               <View style={styles.buttonBlockContainer}>

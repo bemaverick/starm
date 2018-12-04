@@ -6,19 +6,24 @@
 import React from 'react';
 import Node from 'react';
 import { Text, Image, TouchableOpacity, View, StatusBar, Platform } from 'react-native';
-import Ionicon from 'react-native-vector-icons/Ionicons';
 
+import { logo_bemaverick } from "../../assets/images/identity";
 import { Colors } from '../../constants';
+import IconC from "./../IconC";
 import styles from './styles';
 
 
 type _t_props = {
-  transparent?: boolean,
-  title: string,
   backgroundColor: string,
-  leftItemImageURI?: string,
+  transparent?: boolean,
+
+  title: string,
+
+  leftLogo?: boolean,
+
   rightIcon?: Node,
   rightIconAction?: Function,
+
   leftIcon?: Node,
   leftIconAction?: Function
 };
@@ -26,7 +31,7 @@ const HeaderC = (props: _t_props) => {
   let leftIcon = props.leftIcon;
   const LeftWrap = props.leftIconAction ? TouchableOpacity : View;
   if (props.leftIcon === 'back') {
-    leftIcon = (<Ionicon name="ios-arrow-back" color={Colors.white} size={24} />);
+    leftIcon = (<IconC type="IO" name="ios-arrow-back" />);
   }
 
   const rightIcon = props.rightIcon;
@@ -36,9 +41,10 @@ const HeaderC = (props: _t_props) => {
     <View
       style={[
         styles.container,
+        props.transparent && styles.transparent,
         props.backgroundColor && { backgroundColor: props.backgroundColor },
-        props.transparent && styles.transparent
-        ]}
+
+      ]}
     >
       <StatusBar
         hidden={Platform.OS === 'android'}
@@ -53,8 +59,8 @@ const HeaderC = (props: _t_props) => {
           leftIcon
         }
         {
-          !! props.leftItemImageURI && (
-            <Image source={{uri: props.leftItemImageURI}} style={styles.image}/>
+          props.leftLogo && (
+            <Image source={logo_bemaverick} style={styles.image}/>
           )
         }
       </LeftWrap>

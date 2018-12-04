@@ -1,5 +1,4 @@
 import React from 'react';
-
 import { createNavigationContainer, createStackNavigator, createSwitchNavigator } from "react-navigation";
 import { createMaterialBottomTabNavigator } from "react-navigation-material-bottom-tabs";
 
@@ -7,36 +6,12 @@ import {
   AlleyMain, AlleyAddChampion, AlleyChampion,
   MemberMain, Member,
   Login, Loading, SignUp,
+  EventMain,
   ProfileMain
 } from "./../containers";
-import { CustomIcon } from "./../components";
-
-import MaterialCommunityIcon from 'react-native-vector-icons/MaterialCommunityIcons';
+import { IconC } from "./../components";
 import { Colors } from "./../constants";
 
-const ProfileStack = createStackNavigator({
-  ProfileMain: {
-    screen: ProfileMain
-  },
-}, {
-  defaultNavigationOptions: {
-    header: null,
-    gesturesEnabled: true
-  }
-});
-
-
-const MemberStack = createStackNavigator({
-  MemberMain: {
-    screen: MemberMain
-  },
-  Member
-}, {
-  defaultNavigationOptions: {
-    header: null,
-    gesturesEnabled: true
-  }
-});
 
 const AlleyStack = createStackNavigator({
   AlleyMain: {
@@ -55,12 +30,50 @@ const AlleyStack = createStackNavigator({
   }
 });
 
+const MemberStack = createStackNavigator({
+  MemberMain: {
+    screen: MemberMain
+  },
+  Member
+}, {
+  defaultNavigationOptions: {
+    header: null,
+    gesturesEnabled: true
+  }
+});
+
+const EventStack = createStackNavigator({
+  EventMain: {
+    screen: EventMain
+  },
+}, {
+  defaultNavigationOptions: {
+    header: null,
+    gesturesEnabled: true
+  }
+});
+
+const ProfileStack = createStackNavigator({
+  ProfileMain: {
+    screen: ProfileMain
+  },
+}, {
+  defaultNavigationOptions: {
+    header: null,
+    gesturesEnabled: true
+  }
+});
+
+
+
+
+
 const TabNavigator = createMaterialBottomTabNavigator({
   Alley: {
     screen: AlleyStack,
     navigationOptions: {
       tabBarIcon: () => (
-        <MaterialCommunityIcon size={24} name="account-star" color="white"/>
+        <IconC type="IO" name="md-medal" color="white"/>
       ),
       tabBarColor: Colors.darkGreen
     },
@@ -72,20 +85,51 @@ const TabNavigator = createMaterialBottomTabNavigator({
     navigationOptions: {
       tabBarIcon: ({ focused, horizontal, tintColor }) => {
         return (
-          <MaterialCommunityIcon size={24} name="human-handsup" color={focused ? 'white' : tintColor}/>
-
+          <IconC type="MIC" name="account-group" color={focused ? 'white' : Colors.white}/>
         )
 
       },
       tabBarColor: Colors.darkBlue
-
     }
   },
-  Setting: { screen: AlleyMain },
-  Event: { screen: AlleyMain },
-  Profile: { screen: ProfileStack },
+  Event: {
+    screen: EventStack,
+    navigationOptions: {
+      tabBarIcon: ({ focused, horizontal, tintColor }) => {
+        return (
+          <IconC type="IO" name="ios-calendar" color={focused ? 'white' : Colors.white}/>
+        )
+
+      },
+      tabBarColor: Colors.darkRed
+    }
+  },
+  Gym: { screen: AlleyMain,
+    navigationOptions: {
+      tabBarIcon: ({ focused, horizontal, tintColor }) => {
+        return (
+          <IconC type="SLI" name="location-pin" color={focused ? 'white' : Colors.white}/>
+        )
+
+      },
+      tabBarColor: Colors.darkBlue
+    }
+
+  },
+  Profile: {
+    screen: ProfileStack,
+    navigationOptions: {
+      tabBarIcon: ({ focused, horizontal, tintColor }) => {
+        return (
+          <IconC type="IO" name="ios-settings" color={focused ? 'white' : Colors.white}/>
+        )
+
+      },
+      tabBarColor: Colors.darkBlue
+    }
+  },
 }, {
-  initialRouteName: 'Alley',
+  initialRouteName: 'Event',
   activeColor: '#fff',
   inactiveColor: '#999',
   barStyle: { backgroundColor: Colors.darkGreen },

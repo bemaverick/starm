@@ -1,6 +1,7 @@
 import React from 'react'
-import { StyleSheet, Text, TextInput, View, Button } from 'react-native';
+import { Image, Text, TextInput, View, Button, Platform } from 'react-native';
 import firebase from 'react-native-firebase';
+import styles from './styles';
 
 
 export default class SignUp extends React.Component {
@@ -15,8 +16,23 @@ export default class SignUp extends React.Component {
     console.log('handleSignUp')
   }
   render() {
+
     return (
       <View style={styles.container}>
+
+
+
+        <Image
+          style={styles.backgroundRootImage}
+          blurRadius={Platform.OS === 'ios' ? 8 : 1}
+
+          source={{uri: 'http://www.visniaphotos.com/wp-content/uploads/2018/11/DSC9862.jpg'}}
+
+         // source={{uri: 'http://www.visniaphotos.com/wp-content/uploads/2018/09/JMR7047.jpg'}}
+
+          //source={{uri: 'http://www.visniaphotos.com/wp-content/uploads/2018/09/DSC8815.jpg'}}
+        />
+
         <Text>Sign Up</Text>
         {this.state.errorMessage &&
         <Text style={{ color: 'red' }}>
@@ -46,17 +62,4 @@ export default class SignUp extends React.Component {
     )
   }
 }
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
-  },
-  textInput: {
-    height: 40,
-    width: '90%',
-    borderColor: 'gray',
-    borderWidth: 1,
-    marginTop: 8
-  }
-})
+

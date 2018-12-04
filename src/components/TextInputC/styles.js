@@ -1,5 +1,5 @@
 import {Platform, StyleSheet} from "react-native";
-import { METRICKS, Colors } from './../../constants';
+import { FONTS, Colors } from './../../constants';
 
 const styles = StyleSheet.create({
   container: {
@@ -13,6 +13,7 @@ const styles = StyleSheet.create({
   textInput: {
     flex: 1,
     color: Colors.white,
+    fontFamily: FONTS.ROBOTO_SLAB_400,
     height: 40,
     paddingHorizontal: 10
   },

@@ -6,8 +6,6 @@
 import React from 'react';
 import Node from 'react';
 import { Text, Image, TouchableOpacity, View, StatusBar, Platform } from 'react-native';
-import Ionicon from 'react-native-vector-icons/Ionicons';
-
 import { Colors } from '../../constants';
 import styles from './styles';
 
@@ -15,7 +13,9 @@ import styles from './styles';
 type _t_props = {
   title: string,
   onPress: Function,
-  mb?: number
+  color?: string,
+  mb?: number,
+  icon?: Node
 };
 const ButtonC = (props: _t_props) => {
 
@@ -25,10 +25,28 @@ const ButtonC = (props: _t_props) => {
       onPress={props.onPress}
       style={[
         styles.container,
-        props.mb && { marginBottom: props.mb }
+        props.mb && { marginBottom: props.mb },
+        props.color && { borderColor: props.color}
       ]}
     >
-      <Text style={styles.text}>{props.title}</Text>
+      {
+        !!props.icon && (
+          <View
+            style={styles.iconBlock}
+          >
+            {props.icon}
+          </View>
+        )
+      }
+
+      <Text
+        style={[
+          styles.text,
+          props.color && { color: props.color}
+        ]}
+      >
+        {props.title}
+      </Text>
 
     </TouchableOpacity>
   )

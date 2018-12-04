@@ -7,11 +7,11 @@ import React, { Component } from 'react';
 import { FlatList , Image, Text, View, Dimensions, Button } from 'react-native';
 import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
 import firebase from 'react-native-firebase';
+
 import { HeaderC, ChampionItem } from './../../components';
 import { topChampions } from './../../database/category';
 import styles from './styles';
 
-const logoURL = "https://www.westada.org/cms/lib/ID01904074/Centricity/Template/GlobalAssets/images///logos/logo_mountainview-04.png";
 
 export default class AlleyMain extends Component<Props> {
 
@@ -61,7 +61,7 @@ export default class AlleyMain extends Component<Props> {
     return (
       <View style={styles.container}>
         <HeaderC
-          leftItemImageURI={logoURL}
+          leftLogo
           title="Alley of glory"
           rightIcon={rightIcon}
           rightIconAction={() => navigation.navigate('AlleyAddChampion')}

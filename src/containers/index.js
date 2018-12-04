@@ -10,6 +10,8 @@ import Loading from './AuthScreens/Loading';
 import SignUp from './AuthScreens/SignUp';
 import Login from './AuthScreens/Login';
 
+import EventMain from './EventMain';
+
 
 import ProfileMain from './ProfileMain';
 
@@ -25,6 +27,8 @@ export {
   Loading,
   SignUp,
   Login,
+
+  EventMain,
 
   ProfileMain
 

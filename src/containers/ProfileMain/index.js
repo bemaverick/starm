@@ -11,7 +11,6 @@ import firebase from 'react-native-firebase';
 
 import { HeaderC, } from './../../components';
 
-const logoURL = "https://www.westada.org/cms/lib/ID01904074/Centricity/Template/GlobalAssets/images///logos/logo_mountainview-04.png";
 
 export default class ProfileMain extends Component<Props> {
   state = {
@@ -55,7 +54,6 @@ export default class ProfileMain extends Component<Props> {
     return (
       <View style={{ flex: 1}}>
         <HeaderC
-          leftItemImageURI={logoURL}
           title="User Profile"
         />
         <View

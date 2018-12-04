@@ -5,12 +5,10 @@
 
 import React, { Component } from 'react';
 import { FlatList , Image, ImageBackground, Text, View, TouchableOpacity, Button } from 'react-native';
-import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
 import { HeaderC, ChampionItem } from './../../components';
 import { Colors } from './../../constants';
 import styles from './styles';
 
-const logoURL = "https://www.westada.org/cms/lib/ID01904074/Centricity/Template/GlobalAssets/images///logos/logo_mountainview-04.png";
 
 
 export default class MemberMain extends Component<Props> {
@@ -164,15 +162,12 @@ export default class MemberMain extends Component<Props> {
 
   render() {
     const { navigation } = this.props;
-    const rightIcon = (<MaterialIcon name="person-add" size={24} color="#099" />);
     return (
       <View style={styles.container}>
         <HeaderC
+          leftLogo
           backgroundColor={Colors.darkBlue}
-          leftItemImageURI={logoURL}
-          title="Alley of glory"
-          rightIcon={rightIcon}
-          rightIconAction={() => navigation.navigate('AlleyAddChampion')}
+          title="Members"
         />
 
         <FlatList

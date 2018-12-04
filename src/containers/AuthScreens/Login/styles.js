@@ -1,5 +1,6 @@
 import { StyleSheet } from "react-native";
-import { METRICKS } from './../../../constants';
+import { METRICKS, FONTS } from './../../../constants';
+import Colors from "../../../constants/colors";
 
 const styles = StyleSheet.create({
   container: {
@@ -8,6 +9,14 @@ const styles = StyleSheet.create({
   },
   flex1: {
     flex: 1,
+    paddingBottom: 60,
+    justifyContent: 'flex-end',
+    alignItems: 'center'
+  },
+  logoText: {
+    fontFamily: FONTS.BLACK_400,
+    color: Colors.white,
+    fontSize: 48,
   },
   buttonBlockContainer: {
     backgroundColor: 'rgba(0, 0, 0, .6)',
