@@ -109,6 +109,7 @@ export default class EventMain extends Component<Props> {
 
   render() {
     const { navigation } = this.props;
+    const rightHeaderIcon = (<IconC type="AD" name="calendar" />);
     return (
       <View style={styles.container}>
         <HeaderC
@@ -116,7 +117,10 @@ export default class EventMain extends Component<Props> {
           backgroundColor={'rgba(0, 0, 0, .6)'}
           leftLogo
           title="Arm event"
-        />
+          rightIcon={rightHeaderIcon}
+          rightIconAction={() => navigation.navigate('EventCalendar')}
+
+      />
         <FlatList
           keyExtractor = {(item, index) => item.image}
         //  ListHeaderComponent={this.renderHeader}

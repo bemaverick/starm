@@ -6,7 +6,7 @@ import {
   AlleyMain, AlleyAddChampion, AlleyChampion,
   MemberMain, Member,
   Login, Loading, SignUp,
-  EventMain,
+  EventMain, EventCalendar,
   ProfileMain
 } from "./../containers";
 import { IconC } from "./../components";
@@ -46,7 +46,9 @@ const EventStack = createStackNavigator({
   EventMain: {
     screen: EventMain
   },
+  EventCalendar
 }, {
+  initialRouteName: 'EventMain',
   defaultNavigationOptions: {
     header: null,
     gesturesEnabled: true

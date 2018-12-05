@@ -11,6 +11,7 @@ import SignUp from './AuthScreens/SignUp';
 import Login from './AuthScreens/Login';
 
 import EventMain from './EventMain';
+import EventCalendar from './EventCalendar';
 
 
 import ProfileMain from './ProfileMain';
@@ -29,6 +30,7 @@ export {
   Login,
 
   EventMain,
+  EventCalendar,
 
   ProfileMain
 
