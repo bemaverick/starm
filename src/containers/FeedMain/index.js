@@ -63,31 +63,30 @@ export default class FeedMain extends Component<Props> {
   }
 
   runAnimation(i) {
-
-    Animated.stagger(900, [
+    Animated.stagger(4000, [
       Animated.timing(
         this.fontScale[i],
         {
           toValue: 1,
-          duration: 1200,
-          easing: Easing.linear,
+          duration: 5000,
+          easing: Easing.easeIn,
         }
       ),
       Animated.parallel([
-        Animated.timing(
-          this.Value[i + 1],
-          {
-            toValue: 1,
-            duration: 300,
-            easing: Easing.linear,
-          }
-        ),
+        // Animated.timing(
+        //   this.Value[i + 1],
+        //   {
+        //     toValue: 1,
+        //     duration: 100,
+        //     easing: Easing.linear,
+        //   }
+        // ),
         Animated.timing(
           this.imageOpacity[i + 1],
           {
             toValue: 1,
-            duration: 300,
-            easing: Easing.linear,
+            duration: 800,
+            easing: Easing.easeIn,
           }
         ),
         ]
@@ -95,6 +94,8 @@ export default class FeedMain extends Component<Props> {
 
     ]).start(() => {
       if (i < 5) {
+        this.Value[i + 1].setValue(1)
+
         this.runAnimation(i + 1)
       }
     })
@@ -300,7 +301,7 @@ export default class FeedMain extends Component<Props> {
         >
 
           <Animated.Image
-            source={{uri: 'http://www.visniaphotos.com/wp-content/uploads/2017/02/20110723-DSC_0388-2-1.jpg'}}
+            source={{uri: 'https://uproxx.files.wordpress.com/2018/04/wal-billboard-jpg.jpeg?quality=95&w=650'}}
             style={{
               width: METRICKS.SCREEN_WIDTH, height: METRICKS.SCREEN_HEIGHT,
               position: 'absolute',
@@ -311,13 +312,59 @@ export default class FeedMain extends Component<Props> {
           />
 
           <Animated.Image
-            source={{uri: 'http://www.walunderground.com/images/uploads/368/new2841__hero@1x.jpg'}}
+            source={{uri: 'https://i.ytimg.com/vi/fcjJYsKY84o/maxresdefault.jpg'}}
             style={{
               position: 'absolute',
               top: 0,
               left: 0,
               width: METRICKS.SCREEN_WIDTH, height: METRICKS.SCREEN_HEIGHT,
               opacity: this.imageOpacity[1]
+            }}
+          />
+
+          <Animated.Image
+            source={{uri: 'https://pbs.twimg.com/profile_images/448944912692568064/_9ZV6Q4b.jpeg'}}
+            style={{
+              width: METRICKS.SCREEN_WIDTH, height: METRICKS.SCREEN_HEIGHT,
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              opacity: this.imageOpacity[2]
+            }}
+          />
+
+
+          <Animated.Image
+            source={{uri: 'https://i.pinimg.com/originals/4c/39/99/4c3999f62aa5d89a6389603a70d007ef.jpg'}}
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: METRICKS.SCREEN_WIDTH, height: METRICKS.SCREEN_HEIGHT,
+              opacity: this.imageOpacity[3]
+            }}
+          />
+
+          <Animated.Image
+            source={{uri: 'http://www.visniaphotos.com/wp-content/uploads/2017/02/20110723-DSC_0567.jpg'}}
+            style={{
+              width: METRICKS.SCREEN_WIDTH, height: METRICKS.SCREEN_HEIGHT,
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              opacity: this.imageOpacity[4]
+            }}
+          />
+
+
+          <Animated.Image
+            source={{uri: 'http://www.visniaphotos.com/wp-content/uploads/2017/02/20110723-DSC_0567.jpg'}}
+            style={{
+              position: 'absolute',
+              top: 0,
+              left: 0,
+              width: METRICKS.SCREEN_WIDTH, height: METRICKS.SCREEN_HEIGHT,
+              opacity: this.imageOpacity[5]
             }}
           />
           {/*<View style={{ flex: 1, height: '100%', backgroundColor: '#324376' }} />*/}
