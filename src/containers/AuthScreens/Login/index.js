@@ -4,10 +4,12 @@ import firebase from 'react-native-firebase';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import SimpleLineIcons from 'react-native-vector-icons/SimpleLineIcons';
-import { Hideo } from 'react-native-textinput-effects';
+
+import { signInBackground } from "../../../assets/images/background";
 import { ButtonC, TextInputC } from './../../../components';
 import styles from './styles';
 import {Colors} from "../../../constants";
+
 
 export default class Login extends React.Component {
   constructor(props) {
@@ -166,7 +168,7 @@ export default class Login extends React.Component {
         <Image
           style={styles.backgroundRootImage}
           blurRadius={Platform.OS === 'ios' ? 8 : 1}
-          source={{uri: 'http://www.visniaphotos.com/wp-content/uploads/2018/09/DSC9307.jpg'}}
+          source={signInBackground}
         />
 
         <Animated.View style={[styles.backArrow, {top: this.arrowTopOffset, opacity: this.arrowOpacity}]}>

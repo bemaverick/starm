@@ -1,16 +1,54 @@
 import React from 'react';
-import { createNavigationContainer, createStackNavigator, createSwitchNavigator } from "react-navigation";
+import {
+  createMaterialTopTabNavigator,
+  createNavigationContainer,
+  createAppContainer,
+  createStackNavigator,
+  createSwitchNavigator
+} from "react-navigation";
 import { createMaterialBottomTabNavigator } from "react-navigation-material-bottom-tabs";
 
 import {
-  AlleyMain, AlleyAddChampion, AlleyChampion,
+  AlleyMain, AlleyAddChampion, AlleyChampion, AlleyChampionMediaTab, AlleyChampionInfoTab,
   MemberMain, Member,
   Login, Loading, SignUp,
   EventMain, EventCalendar,
+  FeedMain,
   ProfileMain
 } from "./../containers";
 import { IconC } from "./../components";
 import { Colors } from "./../constants";
+import FONTS from "../constants/fonts";
+
+
+const AlleyChampionTabs = createAppContainer(createMaterialTopTabNavigator({
+  Info: {
+    screen: AlleyChampionInfoTab
+  },
+  Media: {
+    screen: AlleyChampionMediaTab
+  }
+}, {
+  tabBarOptions: {
+    labelStyle: {
+      fontSize: 12,
+      fontFamily: FONTS.ROBOTO_SLAB_400,
+      letterSpacing: 0.8,
+      color: Colors.white
+    },
+    tabStyle: {
+      height: 36,
+      padding: 0,
+      margin: 0
+    },
+    indicatorStyle: {
+      backgroundColor: Colors.white,
+    },
+    style: {
+      backgroundColor: "#222",
+    },
+  }
+}));
 
 
 const AlleyStack = createStackNavigator({
@@ -19,7 +57,12 @@ const AlleyStack = createStackNavigator({
     },
     screen: AlleyMain
   },
-  AlleyChampion,
+  AlleyChampion: {
+    screen: AlleyChampion,
+    navigationOptions: {
+      tabBarVisible: false,
+    },
+  },
   AlleyAddChampion: {
     screen: AlleyAddChampion
   }
@@ -29,6 +72,18 @@ const AlleyStack = createStackNavigator({
     gesturesEnabled: true
   }
 });
+
+
+AlleyStack.navigationOptions = ({ navigation }) => {
+  let tabBarVisible = true;
+  if (navigation.state.index > 0) {
+    tabBarVisible = false;
+  }
+
+  return {
+    tabBarVisible,
+  };
+};
 
 const MemberStack = createStackNavigator({
   MemberMain: {
@@ -106,8 +161,10 @@ const TabNavigator = createMaterialBottomTabNavigator({
       tabBarColor: Colors.darkRed
     }
   },
-  Gym: { screen: AlleyMain,
-    navigationOptions: {
+  Gym: { screen: FeedMain,
+    navigationOptions: ({navigationOptions}) => {
+      console.log(navigationOptions)
+      return {
       tabBarIcon: ({ focused, horizontal, tintColor }) => {
         return (
           <IconC type="SLI" name="location-pin" color={focused ? 'white' : Colors.white}/>
@@ -115,7 +172,7 @@ const TabNavigator = createMaterialBottomTabNavigator({
 
       },
       tabBarColor: Colors.darkBlue
-    }
+    }}
 
   },
   Profile: {
@@ -131,7 +188,7 @@ const TabNavigator = createMaterialBottomTabNavigator({
     }
   },
 }, {
-  initialRouteName: 'Event',
+  initialRouteName: 'Gym',
   activeColor: '#fff',
   inactiveColor: '#999',
   barStyle: { backgroundColor: Colors.darkGreen },
@@ -152,4 +209,5 @@ const appRootNav = createSwitchNavigator({
 
 const Navigator = createNavigationContainer(appRootNav);
 
+export { AlleyChampionTabs };
 export default Navigator;

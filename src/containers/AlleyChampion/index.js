@@ -5,11 +5,12 @@
 
 import React, { Component } from 'react';
 import { FlatList , ScrollView, Text, View, Dimensions, Button } from 'react-native';
-import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
-import firebase from 'react-native-firebase';
+import { AlleyChampionTabs } from "../../navigation";
 import { HeaderC, ResponsiveImage } from './../../components';
-import { topChampions } from './../../database/category';
 import styles from './styles';
+
+
+
 
 
 export default class AlleyChampion extends Component<Props> {
@@ -38,11 +39,20 @@ export default class AlleyChampion extends Component<Props> {
           leftIcon="back"
           leftIconAction={() => navigation.goBack()}
         />
-        <ScrollView>
+
+        <View style={styles.imageWrap}>
           <ResponsiveImage
             uri={championData.avatar_url}
           />
-        </ScrollView>
+          <View style={styles.champNameBlock}>
+            <Text style={styles.championName}>{championData.first_name} {championData.last_name}</Text>
+          </View>
+        </View>
+
+        <View style={{flex: 1}}>
+          <AlleyChampionTabs />
+        </View>
+
 
 
       </View>

@@ -7,6 +7,7 @@
     "test": "jest"
   },
   "dependencies": {
+    "jimp": "^0.6.0",
     "moment": "^2.22.2",
     "react": "16.6.1",
     "react-native": "0.57.7",
@@ -14,6 +15,7 @@
     "react-native-calendars": "^1.19.3",
     "react-native-firebase": "^5.1.1",
     "react-native-gesture-handler": "^1.0.10",
+    "react-native-material-ripple": "^0.8.0",
     "react-native-paper": "^2.2.8",
     "react-native-snap-carousel": "^3.7.5",
     "react-native-splash-screen": "^3.1.1",

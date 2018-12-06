@@ -11,7 +11,7 @@ export default StyleSheet.create({
   image: {
     height: (METRICKS.SCREEN_WIDTH * 0.67) / 3,
     width: (METRICKS.SCREEN_WIDTH * 0.67) / 3,
-    borderRadius: (METRICKS.SCREEN_WIDTH * 0.67) / 6
+    borderRadius: (METRICKS.SCREEN_WIDTH * 0.67) / 6,
   },
   text: {
     paddingTop: 5,

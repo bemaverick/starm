@@ -5,6 +5,7 @@
 
 import React, { Component } from 'react';
 import { FlatList , ScrollView, Text, View, TouchableOpacity, Button } from 'react-native';
+
 import firebase from 'react-native-firebase';
 import { HeaderC, ButtonC, IconC, EventItem } from './../../components';
 
@@ -90,6 +91,7 @@ export default class EventMain extends Component<Props> {
   renderItems = ({item, index}) => {
     return (
       <EventItem
+        onPress={() => console.log(12)}
         isFirst={!index}
         {...item}
          imageURL={item.image}

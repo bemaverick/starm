@@ -5,6 +5,8 @@
 
 import React from 'react';
 import { Text, Image, View, TouchableOpacity, ImageBackground } from 'react-native';
+import Ripple from 'react-native-material-ripple';
+
 import IconC from './../IconC';
 import styles from './styles';
 
@@ -16,10 +18,13 @@ type _t_props = {
   onPress: Function
 };
 const EventItem = (props: _t_props) => {
-  const Wrap = props.onPress ? TouchableOpacity : View;
+  const Wrap = props.onPress ? Ripple : View;
   return (
     <Wrap
       onPress={props.onPress}
+      rippleOpacity={0.87}
+      rippleColor={"#c11"}
+      rippleDuration={950}
       style={[
         styles.container,
         props.isFirst && styles.firstItem
