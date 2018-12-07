@@ -10,6 +10,8 @@ import Member from './Member';
 import Loading from './AuthScreens/Loading';
 import SignUp from './AuthScreens/SignUp';
 import Login from './AuthScreens/Login';
+import SplashIOS from './AuthScreens/SplashIOS';
+
 
 import EventMain from './EventMain';
 import EventCalendar from './EventCalendar';
@@ -33,6 +35,7 @@ export {
   Loading,
   SignUp,
   Login,
+  SplashIOS,
 
   EventMain,
   EventCalendar,

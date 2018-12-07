@@ -63,6 +63,7 @@
 		377D29867FF54A9E80717ED7 /* BlackOpsOne-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 277084E608BC4631B12EBA53 /* BlackOpsOne-Regular.ttf */; };
 		344E191C33EF4B11A2E996DB /* RobotoSlab-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 1AB2DEE9FFDF43198FB6BE4E /* RobotoSlab-Bold.ttf */; };
 		4E78ECA67DE942E78A51B229 /* RobotoSlab-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 9C45F4146C06480F8EF3219E /* RobotoSlab-Regular.ttf */; };
+		9AEBDA87D1144EEDAB349E5A /* NovaSOLID-SOLID.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ACEAE051A0A14D41BDDA7275 /* NovaSOLID-SOLID.ttf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -436,6 +437,7 @@
 		277084E608BC4631B12EBA53 /* BlackOpsOne-Regular.ttf */ = {isa = PBXFileReference; name = "BlackOpsOne-Regular.ttf"; path = "../assets/fonts/BlackOpsOne-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		1AB2DEE9FFDF43198FB6BE4E /* RobotoSlab-Bold.ttf */ = {isa = PBXFileReference; name = "RobotoSlab-Bold.ttf"; path = "../assets/fonts/RobotoSlab-Bold.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 		9C45F4146C06480F8EF3219E /* RobotoSlab-Regular.ttf */ = {isa = PBXFileReference; name = "RobotoSlab-Regular.ttf"; path = "../assets/fonts/RobotoSlab-Regular.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
+		ACEAE051A0A14D41BDDA7275 /* NovaSOLID-SOLID.ttf */ = {isa = PBXFileReference; name = "NovaSOLID-SOLID.ttf"; path = "../assets/fonts/NovaSOLID-SOLID.ttf"; sourceTree = "<group>"; fileEncoding = undefined; lastKnownFileType = unknown; explicitFileType = undefined; includeInIndex = 0; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -637,6 +639,7 @@
 				277084E608BC4631B12EBA53 /* BlackOpsOne-Regular.ttf */,
 				1AB2DEE9FFDF43198FB6BE4E /* RobotoSlab-Bold.ttf */,
 				9C45F4146C06480F8EF3219E /* RobotoSlab-Regular.ttf */,
+				ACEAE051A0A14D41BDDA7275 /* NovaSOLID-SOLID.ttf */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
@@ -1311,6 +1314,7 @@
 				377D29867FF54A9E80717ED7 /* BlackOpsOne-Regular.ttf in Resources */,
 				344E191C33EF4B11A2E996DB /* RobotoSlab-Bold.ttf in Resources */,
 				4E78ECA67DE942E78A51B229 /* RobotoSlab-Regular.ttf in Resources */,
+				9AEBDA87D1144EEDAB349E5A /* NovaSOLID-SOLID.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

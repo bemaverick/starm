@@ -1,4 +1,5 @@
 import React from 'react';
+import { Platform } from 'react-native';
 import {
   createMaterialTopTabNavigator,
   createNavigationContainer,
@@ -11,7 +12,7 @@ import { createMaterialBottomTabNavigator } from "react-navigation-material-bott
 import {
   AlleyMain, AlleyAddChampion, AlleyChampion, AlleyChampionMediaTab, AlleyChampionInfoTab,
   MemberMain, Member,
-  Login, Loading, SignUp,
+  Login, Loading, SignUp, SplashIOS,
   EventMain, EventCalendar,
   FeedMain,
   ProfileMain
@@ -171,7 +172,9 @@ const TabNavigator = createMaterialBottomTabNavigator({
         )
 
       },
-      tabBarColor: Colors.darkBlue
+      //  tabBarVisible: false,
+
+        tabBarColor: Colors.darkBlue
     }}
 
   },
@@ -199,10 +202,11 @@ const appRootNav = createSwitchNavigator({
     Loading,
     SignUp,
     Login,
+    SplashIOS,
     TabNavigator
   },
   {
-    initialRouteName: 'Loading'
+    initialRouteName: Platform.OS === 'ios' ? 'SplashIOS' : 'Loading'
   }
 );
 
