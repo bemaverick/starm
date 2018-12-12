@@ -2,7 +2,6 @@ import React from 'react';
 import { Platform } from 'react-native';
 import {
   createMaterialTopTabNavigator,
-  createNavigationContainer,
   createAppContainer,
   createStackNavigator,
   createSwitchNavigator
@@ -12,7 +11,7 @@ import { createMaterialBottomTabNavigator } from "react-navigation-material-bott
 import {
   AlleyMain, AlleyAddChampion, AlleyChampion, AlleyChampionMediaTab, AlleyChampionInfoTab,
   MemberMain, Member,
-  Login, Loading, SignUp, SplashIOS,
+  Login, Loading, SignUpEmail, SplashIOS, SignInEmail, SignInPhone,
   EventMain, EventCalendar,
   FeedMain,
   ProfileMain
@@ -191,27 +190,47 @@ const TabNavigator = createMaterialBottomTabNavigator({
     }
   },
 }, {
-  initialRouteName: 'Gym',
+  initialRouteName: 'Profile',
   activeColor: '#fff',
   inactiveColor: '#999',
   barStyle: { backgroundColor: Colors.darkGreen },
 });
 
 
+const AuthStack = createStackNavigator({
+  // Loading: {
+  //   screen: Loading
+  // },
+  SignInEmail: {
+    screen: SignInEmail
+  },
+  SignUpEmail,
+  Login,
+  SignInPhone
+}, {
+  initialRouteName: 'Login',
+  defaultNavigationOptions: {
+    header: null,
+    gesturesEnabled: true
+  }
+});
+
+
 const appRootNav = createSwitchNavigator({
+    AuthStack,
     Loading,
-    SignUp,
-    Login,
     SplashIOS,
     TabNavigator
   },
   {
-    initialRouteName: Platform.OS === 'ios' ? 'SplashIOS' : 'Loading'
+    // initialRouteName: Platform.OS === 'ios' ? 'SplashIOS' : 'Loading'
+    initialRouteName: 'Loading'
+
   }
 );
 
 
-const Navigator = createNavigationContainer(appRootNav);
+const Navigator = createAppContainer(appRootNav);
 
 export { AlleyChampionTabs };
 export default Navigator;

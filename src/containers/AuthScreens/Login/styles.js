@@ -9,8 +9,7 @@ const styles = StyleSheet.create({
   },
   flex1: {
     flex: 1,
-    paddingBottom: 60,
-    justifyContent: 'flex-end',
+    justifyContent: 'center',
     alignItems: 'center'
   },
   logoText: {
@@ -19,9 +18,10 @@ const styles = StyleSheet.create({
     fontSize: 48,
   },
   buttonBlockContainer: {
-    backgroundColor: 'rgba(0, 0, 0, .6)',
+//    backgroundColor: 'rgba(0, 0, 0, .6)',
+    justifyContent: 'flex-end',
     width: METRICKS.SCREEN_WIDTH,
-    paddingHorizontal: 35,
+    paddingHorizontal: 30,
     paddingVertical: 30
   },
   textInput: {

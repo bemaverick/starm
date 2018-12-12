@@ -61,7 +61,7 @@ export default class Member extends Component<Props> {
             }}
           >
             <Image
-              source={{ uri: memberData.avatar }}
+              source={{ uri: memberData.photoURL }}
               style={{
                 width: METRICKS.SCREEN_WIDTH / 2,
                 height: METRICKS.SCREEN_WIDTH / 2,

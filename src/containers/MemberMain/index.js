@@ -8,7 +8,7 @@ import { FlatList , Image, ImageBackground, Text, View, TouchableOpacity, Button
 import { HeaderC, ChampionItem } from './../../components';
 import { Colors } from './../../constants';
 import styles from './styles';
-
+import { membersRef } from "../../database/category";
 
 
 export default class MemberMain extends Component<Props> {
@@ -16,6 +16,7 @@ export default class MemberMain extends Component<Props> {
   state = {
     keys: [],
     data: {},
+    members: [],
     flags: [
       {
         title: 'Joshuas  Chinni asd sa asd sadsa sa das dsa sad sad as ',
@@ -42,18 +43,27 @@ export default class MemberMain extends Component<Props> {
 
 
   componentDidMount() {
-    // topChampions.on('value', (childrenSnapshot) => {
-    //   console.log(childrenSnapshot)
-    //   this.setState({
-    //     keys: childrenSnapshot._childKeys,
-    //     data: childrenSnapshot._value
-    //   })
-    // })
-    //
-    // topChampions.once('value', function (snapshot) {
-    //   console.log(snapshot.val())
-    // });
+
+
+
+    membersRef
+      .get()
+      .then(({_docs}) => {
+        const members = [];
+        if (_docs) {
+          _docs.forEach((item) => {
+            members.push(item.data());
+          })
+        }
+        this.setState({members})
+        console.log(members)
+    })
+
+
   }
+
+
+
 
   renderItems = ({item, index}) => {
     const { data } = this.state;
@@ -61,7 +71,7 @@ export default class MemberMain extends Component<Props> {
 
     return (
       <TouchableOpacity
-        onPress={() => navigation.navigate('Member', { memberData: this.state.flags[index] })}
+        onPress={() => navigation.navigate('Member', { memberData: item })}
         style={{
        // backgroundColor: '#024',
         marginHorizontal: 0,
@@ -83,14 +93,14 @@ export default class MemberMain extends Component<Props> {
           flex: 1,
           backgroundColor: '#024',
         }}>
-          <Text style={{ color: Colors.white}} numberOfLines={1}>{this.state.flags[index].title}</Text>
+          <Text style={{ color: Colors.white}} numberOfLines={1}>{item.fio}</Text>
           <Text style={{ color: "#aff", paddingLeft: 3}}>{25}</Text>
           <Text style={{ color: Colors.white}}>Kiev</Text>
         </View>
 
         <View style={{position: 'absolute', top: 0, left: 0,}}>
           <Image style={{width: 64, height: 64, borderRadius: 32, justifyContent: 'center', alignItems: 'center'}} source={{uri: this.state.flags[index].flag}} />
-          <Image style={{width: 60, position: 'absolute', top: 2, left: 2, height: 60, borderRadius: 30}} source={{uri: this.state.flags[index].avatar}}/>
+          <Image style={{width: 60, position: 'absolute', top: 2, left: 2, height: 60, borderRadius: 30}} source={{uri: item.photoURL}}/>
 
         </View>
 
@@ -162,6 +172,7 @@ export default class MemberMain extends Component<Props> {
 
   render() {
     const { navigation } = this.props;
+    const { members } = this.state;
     return (
       <View style={styles.container}>
         <HeaderC
@@ -172,8 +183,8 @@ export default class MemberMain extends Component<Props> {
 
         <FlatList
           style={{paddingTop: 10}}
-          keyExtractor = {(item, index) => item}
-          data={[1, 2, 4, 5]}
+          keyExtractor = {(item) => console.log(item.email)}
+          data={members}
           renderItem={this.renderItems}
         />
       </View>

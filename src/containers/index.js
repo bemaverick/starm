@@ -8,7 +8,11 @@ import MemberMain from './MemberMain';
 import Member from './Member';
 
 import Loading from './AuthScreens/Loading';
-import SignUp from './AuthScreens/SignUp';
+import SignInEmail from './AuthScreens/SignInEmail';
+import SignInPhone from './AuthScreens/SignInPhone';
+
+
+import SignUpEmail from './AuthScreens/SignUpEmail';
 import Login from './AuthScreens/Login';
 import SplashIOS from './AuthScreens/SplashIOS';
 
@@ -33,7 +37,9 @@ export {
   Member,
 
   Loading,
-  SignUp,
+  SignInEmail,
+  SignInPhone,
+  SignUpEmail,
   Login,
   SplashIOS,
 

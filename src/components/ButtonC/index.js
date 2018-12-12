@@ -15,7 +15,8 @@ type _t_props = {
   onPress: Function,
   color?: string,
   mb?: number,
-  icon?: Node
+  icon?: Node,
+  inverted: boolean
 };
 const ButtonC = (props: _t_props) => {
 
@@ -26,7 +27,8 @@ const ButtonC = (props: _t_props) => {
       style={[
         styles.container,
         props.mb && { marginBottom: props.mb },
-        props.color && { borderColor: props.color}
+        props.color && { borderColor: props.color},
+        props.inverted && styles.inverted
       ]}
     >
       {
@@ -42,7 +44,8 @@ const ButtonC = (props: _t_props) => {
       <Text
         style={[
           styles.text,
-          props.color && { color: props.color}
+          props.color && { color: props.color},
+          props.inverted && styles.invertedText
         ]}
       >
         {props.title}

@@ -5,15 +5,10 @@ import { METRICKS } from "../../../constants";
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    alignItems: 'center'
+    backgroundColor: '#233'
   },
-  textInput: {
-    height: 40,
-    width: '90%',
-    borderColor: 'gray',
-    borderWidth: 1,
-    marginTop: 8
+  customHeader: {
+    position: 'relative'
   },
   backgroundRootImage: {
     width: METRICKS.SCREEN_WIDTH + 100,
@@ -22,6 +17,11 @@ const styles = StyleSheet.create({
     position: 'absolute',
     top: -100,
     left: -100,
+  },
+  buttonBlockContainer: {
+    width: METRICKS.SCREEN_WIDTH,
+    paddingHorizontal: 35,
+    paddingVertical: 30
   },
 })
 

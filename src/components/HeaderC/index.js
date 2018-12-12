@@ -42,7 +42,9 @@ const HeaderC = (props: _t_props) => {
       style={[
         styles.container,
         props.transparent && styles.transparent,
+        props.style,
         props.backgroundColor && { backgroundColor: props.backgroundColor },
+
 
       ]}
     >

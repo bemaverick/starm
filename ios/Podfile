@@ -7,13 +7,41 @@ target 'stARM' do
 
   # Pods for stARM
 
+  rn_path = '../node_modules/react-native'
+   pod 'yoga', path: "#{rn_path}/ReactCommon/yoga/yoga.podspec"
+   pod 'React', path: rn_path, subspecs: [
+     'Core',
+     'RCTActionSheet',
+     'RCTAnimation',
+     'RCTGeolocation',
+     'RCTImage',
+     'RCTLinkingIOS',
+     'RCTNetwork',
+     'RCTSettings',
+     'RCTText',
+     'RCTVibration',
+     'RCTWebSocket'
+  ]
+
   pod 'Firebase/Core', '~> 5.11.0'
   pod 'Firebase/Database', '~> 5.11.0'
   pod 'Firebase/Auth', '~> 5.11.0'
+  pod 'Firebase/Storage', '~> 5.11.0'
+  pod 'Firebase/Firestore', '~> 5.11.0'
   pod 'RNImageCropPicker', :path =>  '../node_modules/react-native-image-crop-picker'
   target 'stARMTests' do
     inherit! :search_paths
     # Pods for testing
   end
 
+end
+
+# very important to have, unless you removed React dependencies for Libraries
+# and you rely on Cocoapods to manage it
+post_install do |installer|
+  installer.pods_project.targets.each do |target|
+    if target.name == "React"
+      target.remove_from_project
+    end
+  end
 end

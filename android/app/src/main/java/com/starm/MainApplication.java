@@ -3,11 +3,14 @@ package com.starm;
 import android.app.Application;
 
 import com.facebook.react.ReactApplication;
+import com.reactnative.ivpusic.imagepicker.PickerPackage;
 import org.devio.rn.splashscreen.SplashScreenReactPackage;
 import io.invertase.firebase.RNFirebasePackage;
 import com.oblador.vectoricons.VectorIconsPackage;
 import com.swmansion.gesturehandler.react.RNGestureHandlerPackage;
 import io.invertase.firebase.database.RNFirebaseDatabasePackage;
+import io.invertase.firebase.storage.RNFirebaseStoragePackage;
+import io.invertase.firebase.firestore.RNFirebaseFirestorePackage;
 import com.facebook.react.ReactNativeHost;
 import com.facebook.react.ReactPackage;
 import com.facebook.react.shell.MainReactPackage;
@@ -29,12 +32,16 @@ public class MainApplication extends Application implements ReactApplication {
     protected List<ReactPackage> getPackages() {
       return Arrays.<ReactPackage>asList(
           new MainReactPackage(),
+            new PickerPackage(),
             new SplashScreenReactPackage(),
             new RNFirebasePackage(),
             new VectorIconsPackage(),
             new RNGestureHandlerPackage(),
             new RNFirebaseDatabasePackage(),
-            new RNFirebaseAuthPackage()
+            new RNFirebaseAuthPackage(),
+            new RNFirebaseStoragePackage(),
+            new RNFirebaseFirestorePackage()
+
       );
     }
 

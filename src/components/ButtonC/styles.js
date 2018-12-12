@@ -7,7 +7,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     height: 40,
-    borderWidth: Platform.OS === 'ios' ? 1.5 : 1,
+    borderWidth: Platform.OS === 'ios' ? 2 : 1,
     borderRadius: 4,
     backgroundColor: 'transparent',
     borderColor: Colors.white,
@@ -17,6 +17,12 @@ const styles = StyleSheet.create({
     color: Colors.white,
     fontSize: 16,
     letterSpacing: 1
+  },
+  inverted: {
+    backgroundColor: Colors.white,
+  },
+  invertedText: {
+    color: Colors.black,
   },
   iconBlock: {
     position: 'absolute',
