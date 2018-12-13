@@ -223,7 +223,7 @@ const appRootNav = createSwitchNavigator({
     TabNavigator
   },
   {
-    // initialRouteName: Platform.OS === 'ios' ? 'SplashIOS' : 'Loading'
+    //initialRouteName: Platform.OS === 'ios' ? 'SplashIOS' : 'Loading'
     initialRouteName: 'Loading'
 
   }

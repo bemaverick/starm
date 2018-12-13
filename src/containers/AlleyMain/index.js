@@ -4,16 +4,26 @@
  */
 
 import React, { Component } from 'react';
-import { FlatList , Image, Text, View, Dimensions, Button } from 'react-native';
-import MaterialIcon from 'react-native-vector-icons/MaterialIcons';
+import { FlatList, View } from 'react-native';
+import { connect } from 'react-redux';
 import firebase from 'react-native-firebase';
 
-import { HeaderC, ChampionItem } from './../../components';
+import { HeaderC, ChampionItem, IconC } from './../../components';
+import { loginUser, logoutUser } from '../../redux/actions/auth'
 import { topChampions } from './../../database/category';
 import styles from './styles';
 
+const mapStateToProps = state => ({
+  auth: state.auth,
+  posts: state.posts,
+});
 
-export default class AlleyMain extends Component<Props> {
+const mapDispatchToProps = {
+  loginUser,
+  logoutUser,
+};
+
+class AlleyMain extends Component<Props> {
 
   state = {
     keys: [],
@@ -57,7 +67,7 @@ export default class AlleyMain extends Component<Props> {
 
   render() {
     const { navigation } = this.props;
-    const rightIcon = (<MaterialIcon name="person-add" size={24} color="#099" />);
+    const rightIcon = (<IconC type="MI" name="person-add" size={24} color="#099" />);
     return (
       <View style={styles.container}>
         <HeaderC
@@ -77,3 +87,5 @@ export default class AlleyMain extends Component<Props> {
     );
   }
 }
+
+export default connect(mapStateToProps, mapDispatchToProps)(AlleyMain);
